@@ -29,7 +29,7 @@ function AidWorldMap() {
 
   const projection = geoMercator()
     .scale(scale)
-    .translate([width / scaleDivision, height / scaleDivision]);
+    .translate([width / 2.5, height / scaleDivision]);
 
   useEffect(() => {
     fetchMapData();
