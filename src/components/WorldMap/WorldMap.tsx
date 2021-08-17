@@ -1,16 +1,10 @@
-/*
-Author: Eli Elad Elrom
-Website: https://EliElrom.com
-License: MIT License
-Component: src/components/WorldMap/WorldMap.tsx
-*/
-
 import React, { useState } from 'react'
 import { geoOrthographic, geoPath } from 'd3-geo'
 import './WorldMap.scss'
 import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite'
 import { Button } from '@material-ui/core'
-import AnimationFrame from '../../hooks/AnimationFrame'
+import AnimationFrame from '../../hooks/WindowDimensions'
+// import AnimationFrame from '../../hooks/AnimationFrame'
 import { Types } from './types'
 
 const uuid = require('react-uuid')
@@ -73,8 +67,8 @@ const WorldMap = (props: IWorldMapProps) => {
           {props.coordinatesData?.map((d, i) => (
             <circle
               key={`marker-${uuid()}`}
-              cx={returnProjectionValueWhenValid([d.latitude, d.longitude], 0)}
-              cy={returnProjectionValueWhenValid([d.latitude, d.longitude], 1)}
+              cx={returnProjectionValueWhenValid([d.longitude, d.latitude], 0)}
+              cy={returnProjectionValueWhenValid([d.longitude, d.latitude], 1)}
               r={5}
               fill="#E91E63"
               stroke="#FFFFFF"

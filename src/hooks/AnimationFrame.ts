@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 
+// THIS ONE WORKS
 export default (callback: (arg0: ICallback) => void) => {
   const frame = useRef()
   const last = useRef(performance.now())
